@@ -1,4 +1,4 @@
-<robot name="mycar">
+<robot name="mycar11">
     <!-- base_footprint -->
     <link name="base_footprint">
         <visual>
