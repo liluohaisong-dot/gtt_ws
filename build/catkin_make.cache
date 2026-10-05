@@ -1,0 +1,2 @@
+robot:test_pkg:topic_pkg
+-DCATKIN_DEVEL_PREFIX=/home/ll/gtt_ws/devel -DCMAKE_INSTALL_PREFIX=/home/ll/gtt_ws/install -G Unix Makefiles

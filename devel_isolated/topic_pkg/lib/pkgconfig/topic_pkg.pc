@@ -1,0 +1,8 @@
+prefix=/home/ll/gtt_ws/devel_isolated/topic_pkg
+
+Name: topic_pkg
+Description: Description of topic_pkg
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

@@ -1,0 +1,13 @@
+<launch>
+    <param name="robot_description" command="$(find xacro)/xacro $(find robot)/xacro/box.xacro" />
+
+    <node pkg="rviz" type="rviz" name="rviz" args="-d $(find robot)/config/box.rviz" />
+    <node pkg="joint_state_publisher" type="joint_state_publisher" name="joint_state_publisher" output="screen" />
+    <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher" output="screen" />
+    <!-- Optional GUI version. Install it first:
+             sudo apt install ros-melodic-joint-state-publisher-gui
+         Then comment out the joint_state_publisher node above and uncomment the
+         node below. Running both at once makes them fight over /joint_states.
+    -->
+    <!-- <node pkg="joint_state_publisher_gui" type="joint_state_publisher_gui" name="joint_state_publisher_gui" output="screen" /> -->
+</launch>

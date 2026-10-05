@@ -1,0 +1,10 @@
+global_costmap:
+  global_frame: map # map frame
+  robot_base_frame: base_footprint # robot base frame
+  # used to achieve the coordinate transformation
+
+  update_frequency: 1.0 # costmap update frequency
+  publish_frequency: 1.0 # costmap publish frequency
+  transform_tolerance: 0.5 # timeout for waiting for the transform to be published
+
+  static_map: true # whether to initialize the global costmap with a map or a map server; set to false if no static map is used

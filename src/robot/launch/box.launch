@@ -1,0 +1,20 @@
+<launch>
+    <!-- Load the URDF file into the parameter server -->
+    <param name="robot_description" textfile="$(find robot)/urdf/box.urdf" />
+
+    <!-- Start RViz -->
+    <node pkg="rviz" type="rviz" name="rviz" args="-d $(find robot)/config/box.rviz"/>
+
+    <!-- Publish the robot state (TF) from the URDF -->
+    <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher" />
+
+    <!-- Publish joint states (no GUI).
+         Keep only ONE joint_state_publisher running, otherwise the two nodes
+         fight over the /joint_states topic. -->
+    <node pkg="joint_state_publisher" type="joint_state_publisher" name="joint_state_publisher" />
+
+    <!-- Optional GUI version, which needs an extra package:
+           sudo apt install ros-melodic-joint-state-publisher-gui
+         After installing, comment out the node above and uncomment this one. -->
+    <!-- <node pkg="joint_state_publisher_gui" type="joint_state_publisher_gui" name="joint_state_publisher_gui" /> -->
+</launch>
